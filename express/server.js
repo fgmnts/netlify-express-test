@@ -8,7 +8,7 @@ let str = "boot";
 const router = express.Router();
 router.get('/', (req, res) => {
   res.writeHead(200, { 'Content-Type': 'text/html' });
-  res.write(str);
+  res.write("heyo");
   res.end();
 });
 router.get('/another', (req, res) => res.json({ route: req.originalUrl }));
@@ -18,7 +18,7 @@ app.use(bodyParser.json());
 app.use('/.netlify/functions/server', router);  // path must route to lambda
 app.use('/', (req, res) => res.sendFile(path.join(__dirname, '../index.html')));
 
-
+/*
 const query_url =
   "https://www.stories.com/en_eur/clothing/knitwear/cardigans/product.wrap-cardigan-grey.0657572001.html";
 const Nightmare = require("nightmare");
@@ -52,6 +52,6 @@ setInterval(function() {
   check();
 }, 1000 * 60 * 15);
 check();
-
+*/
 module.exports = app;
 module.exports.handler = serverless(app);
