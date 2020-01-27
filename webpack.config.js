@@ -1,0 +1,3 @@
+{
+  target: 'electron-renderer'
+}
